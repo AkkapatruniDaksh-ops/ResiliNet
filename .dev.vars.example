@@ -1,0 +1,10 @@
+# Copy to .dev.vars for local dev, or set as Cloudflare secrets in production:
+#   npx wrangler pages secret put TWILIO_ACCOUNT_SID
+#   npx wrangler pages secret put TWILIO_AUTH_TOKEN
+#   npx wrangler pages secret put TWILIO_FROM_NUMBER
+# Without these, SMS/calls are recorded in the user's history ("demo delivery mode") instead of being sent.
+TWILIO_ACCOUNT_SID=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+TWILIO_AUTH_TOKEN=your_auth_token
+TWILIO_FROM_NUMBER=+15005550006
+# Public URL used inside SMS links (defaults to the request origin)
+APP_URL=https://your-project.pages.dev

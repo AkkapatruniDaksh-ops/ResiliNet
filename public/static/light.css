@@ -1,0 +1,154 @@
+/* light.css — re-skins the dark console/account modules (style.css, home.css,
+   account.css, console.css) to the AirCast light theme used by site.css.
+   Loaded LAST so it wins the cascade. */
+
+body.site {
+  --bg: #f5f7fb;
+  --panel: #ffffff;
+  --panel-2: #f8fafc;
+  --line: #e5e7eb;
+  --line-2: #d1d5db;
+  --ink: #1f2937;
+  --ink-dim: #6b7280;
+  --ink-mute: #9ca3af;
+  --accent: #2e8bff;
+  --accent-2: #0ea5e9;
+  --warn: #f59e0b;
+  --danger: #ef4444;
+  --danger-2: #dc2626;
+  --violet: #7c3aed;
+  --grid: rgba(46,139,255,.06);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Poppins', system-ui, sans-serif;
+  min-width: 0;
+}
+body.site::before { display: none; }
+body.site ::selection { background: #2e8bff; color: #fff; }
+body.site.is-danger, body.site.is-warning { background: var(--bg); }
+
+/* ---- Console shell ---- */
+body.site #app { min-height: 0; }
+body.site .app-header,
+body.site .view-bar,
+body.site .location-bar,
+body.site .panel,
+body.site .viz-card,
+body.site .scrubber,
+body.site .kpi-cell,
+body.site .citizen-metric {
+  background: #fff;
+  border-color: var(--line);
+}
+body.site .panel, body.site .viz-card, body.site .scrubber {
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(20,33,61,.05);
+}
+body.site .app-header { border-radius: 16px; margin: 16px 16px 0; }
+body.site .view-bar { margin: 12px 16px 0; border-radius: 14px; border: 1px solid var(--line); }
+body.site .location-bar { margin: 12px 16px 0; border-radius: 14px; border: 1px solid var(--line); }
+body.site .scenario-banner { margin: 12px 16px 0; border-radius: 12px; background: #f3e8ff; border: 1px solid #d8b4fe; color: #4c1d95; }
+body.site .scenario-banner b { color: #6d28d9; }
+body.site .view-switch { background: #f1f5f9; }
+body.site .view-btn, body.site [data-view] { color: var(--ink-dim); }
+body.site .view-btn.active, body.site [data-view].active { background: #fff; color: var(--accent); box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+body.site .kpi-grid { background: var(--line); border-radius: 12px; overflow: hidden; }
+body.site .conf-bar-bg, body.site .hz .bar, body.site .scrubber-track-bg { background: #e5e7eb; }
+body.site .conf-bar-fill { background: linear-gradient(90deg, #0ea5e9, #2e8bff); }
+body.site .layer-chip.on { background: #e8f1ff; color: #1d6fe0; border-color: #b7d3ff; }
+body.site .layer-chip.off { background: #f8fafc; color: var(--ink-mute); }
+body.site .play-btn { background: #e8f1ff; color: #1d6fe0; border-color: #b7d3ff; }
+body.site .play-btn.playing { background: #2e8bff; color: #fff; border-color: #2e8bff; }
+body.site .scrubber-now-marker { background: #2e8bff; }
+body.site input[type=range]::-webkit-slider-thumb,
+body.site input[type=range]::-moz-range-thumb { background: #2e8bff; border-color: #fff; }
+body.site .alert-row { background: #f8fafc; border-color: var(--line); border-radius: 10px; }
+body.site .alert-row.critical { background: #fef2f2; border-color: #fecaca; }
+body.site .alert-act, body.site .ghost-btn, body.site .header-link {
+  background: #fff; color: var(--ink-dim); border-color: var(--line-2); border-radius: 8px;
+}
+body.site .alert-act:hover, body.site .ghost-btn:hover:not(:disabled), body.site .header-link:hover {
+  color: var(--accent); border-color: #b7d3ff; background: #f0f6ff;
+}
+body.site .ghost-btn.danger { color: #b91c1c; border-color: #fecaca; background: #fef2f2; }
+body.site .mini-select, body.site .mini-input, body.site .loc-input {
+  background: #fff; color: var(--ink); border-color: var(--line-2); border-radius: 8px;
+}
+body.site .dispatch-btn.standby { background: #f1f5f9; color: var(--ink-mute); border-color: var(--line-2); }
+body.site .dispatch-btn.ready { background: #fef2f2; color: #b91c1c; border-color: #fecaca; }
+body.site .dispatch-btn.sent { background: #2e8bff; color: #fff; border-color: #2e8bff; }
+body.site .sensor-dot { background: #22c55e; box-shadow: 0 0 6px #22c55e; }
+body.site .alerts-list::-webkit-scrollbar-thumb { background: var(--line-2); }
+body.site .logo-ring-outer, body.site .logo-ring-inner, body.site .logo-dot, body.site .logo-sweep { border-color: #2e8bff; }
+body.site .vdivider { background: var(--line-2); }
+body.site .phone-frame { background: #111827; border-color: #1f2937; box-shadow: 0 20px 40px rgba(20,33,61,.25); }
+body.site .citizen-stage { background: radial-gradient(ellipse at center, rgba(46,139,255,.06), transparent 60%); }
+body.site .loc-suggest, body.site .suggest { background: #fff; border-color: var(--line-2); box-shadow: 0 16px 40px rgba(20,33,61,.15); }
+body.site .suggest button { color: var(--ink); border-bottom-color: var(--line); }
+body.site .suggest button:hover, body.site .suggest button:focus { background: #f0f6ff; }
+body.site .twk-panel, body.site .twk-row { background: #f8fafc; border-color: var(--line); }
+
+/* ---- Home/Account module (home.css + account.css) ---- */
+body.site .home-app { padding-top: 24px; }
+body.site .card { background: #fff; border-color: var(--line); border-radius: 16px; box-shadow: 0 6px 20px rgba(20,33,61,.05); }
+body.site .search-input, body.site .big-btn,
+body.site .sub-edit select, body.site .sub-edit input,
+body.site .add-form select, body.site .add-form input,
+body.site .prof-form input, body.site .prof-form select,
+body.site .gw-form input, body.site .gw-form select,
+body.site input:not([type=range]):not([type=checkbox]):not([type=radio]), body.site select, body.site textarea {
+  background: #fff; color: var(--ink); border-color: var(--line-2); font-family: inherit;
+}
+body.site input:focus, body.site select:focus, body.site textarea:focus { outline: none; border-color: #2e8bff; box-shadow: 0 0 0 3px rgba(46,139,255,.15); }
+body.site .big-btn { background: #fff; }
+body.site .big-btn:hover { background: #f0f6ff; border-color: #b7d3ff; }
+body.site .big-btn.primary { background: #2e8bff; color: #fff; border-color: #2e8bff; }
+body.site .big-btn.primary:hover { background: #1d6fe0; }
+body.site .big-btn.danger { background: #ef4444; border-color: #ef4444; color: #fff; }
+body.site .chip { background: #fff; color: var(--ink-dim); }
+body.site .chip.active { background: #e8f1ff; color: #1d6fe0; border-color: #b7d3ff; }
+body.site .icon-btn { background: #fff; border-color: var(--line-2); color: var(--ink); border-radius: 10px; font-weight: 500; }
+body.site .icon-btn:hover { background: #f0f6ff; border-color: #b7d3ff; color: #1d6fe0; }
+body.site .status-card .icon-btn { background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.4); color: #fff; }
+body.site .status-card .icon-btn:hover { background: rgba(255,255,255,.3); color: #fff; }
+body.site .advice { background: #f8fafc; border-color: var(--line); }
+body.site .hour, body.site .day, body.site .step, body.site .sub-row { background: #f8fafc; border-color: var(--line); }
+body.site .status-now div { background: rgba(255,255,255,.18); }
+body.site .status-card.SAFE { background: linear-gradient(160deg, #22c55e, #15803d); border-color: transparent; color: #fff; }
+body.site .status-card.WATCH { background: linear-gradient(160deg, #facc15, #ca8a04); border-color: transparent; color: #1f2937; }
+body.site .status-card.WARNING { background: linear-gradient(160deg, #fb923c, #ea580c); border-color: transparent; color: #fff; }
+body.site .status-card.DANGER { background: linear-gradient(160deg, #ef4444, #b91c1c); border-color: transparent; color: #fff; box-shadow: 0 12px 30px rgba(239,68,68,.3); }
+body.site .status-card .status-badge { background: rgba(255,255,255,.9); color: #1f2937; }
+body.site .status-card.WATCH .icon-btn { color: #1f2937; border-color: rgba(0,0,0,.2); background: rgba(255,255,255,.4); }
+body.site .st.sent { background: #dcfce7; color: #166534; }
+body.site .st.simulated { background: #f3e8ff; color: #6d28d9; }
+body.site .st.failed { background: #fee2e2; color: #b91c1c; }
+body.site .st.skipped_quiet { background: #f1f5f9; color: var(--ink-dim); }
+body.site .mode-banner { border-radius: 12px; }
+body.site .mode-banner.sim { background: #fff7ed; border-color: #fdba74; color: #7c2d12; }
+body.site .mode-banner.live { background: #ecfdf5; border-color: #6ee7b7; color: #065f46; }
+body.site .mode-banner code, body.site code { background: #f1f5f9; color: #1f2937; border-radius: 4px; padding: 1px 5px; }
+body.site .muted, body.site .hint, body.site .small { color: var(--ink-dim); }
+body.site a { color: #1d6fe0; }
+body.site h1, body.site h2, body.site h3 { color: #14213d; }
+
+/* ---- Leaflet inside light pages ---- */
+body.site .leaflet-container { background: #dfe7f0; font-family: inherit; }
+body.site .leaflet-control-zoom a { background: #fff; color: #1f2937; border-color: var(--line); }
+body.site .leaflet-control-attribution { background: rgba(255,255,255,.8); color: var(--ink-dim); }
+
+@media (max-width: 700px) {
+  body.site .app-header, body.site .view-bar, body.site .location-bar, body.site .scenario-banner { margin-left: 10px; margin-right: 10px; }
+}
+
+/* ---- Mobile overflow guards (account/home modules) ---- */
+body.site .home-app, body.site .card { min-width: 0; max-width: 100%; }
+body.site .add-form select, body.site .add-form input, body.site .prof-form input, body.site .prof-form select, body.site .gw-form input, body.site .gw-form select, body.site .search-input { width: 100%; min-width: 0; max-width: 100%; }
+body.site .add-form .grid2 > * { min-width: 0; }
+body.site .notif-list, body.site .messages, body.site .card p, body.site .card li { overflow-wrap: anywhere; word-break: break-word; }
+@media (max-width: 560px) {
+  body.site .add-form .grid2, body.site .prof-form .grid2, body.site .gw-form .grid2 { grid-template-columns: 1fr; }
+  body.site .sub-row { grid-template-columns: 10px 1fr; }
+  body.site .sub-row > :last-child { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px; }
+  body.site .steps { grid-template-columns: 1fr 1fr; }
+}

@@ -1,0 +1,46 @@
+/* Account page: watched places, notifications, profile */
+.account-app { max-width: 1120px; }
+.acct-head { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.acct-head h1 { margin: 0; font-size: 24px; }
+.acct-head p { margin: 4px 0 0; color: var(--ink-dim); font-size: 14px; }
+.sub-row { display: grid; grid-template-columns: 10px 1fr auto; gap: 12px; align-items: start; padding: 12px; border-radius: 12px; background: rgba(255,255,255,.03); border: 1px solid var(--line); }
+.sub-row .lvl { width: 10px; height: 10px; border-radius: 50%; margin-top: 6px; }
+.sub-row b { font-size: 15px; display: block; }
+.sub-row .meta { font-size: 12px; color: var(--ink-dim); margin-top: 2px; line-height: 1.5; }
+.sub-row .meta .pill { margin-right: 4px; }
+.sub-actions { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
+.sub-actions .icon-btn { min-height: 34px; padding: 0 10px; font-size: 12px; }
+.sub-edit { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; padding-top: 10px; border-top: 1px dashed var(--line-2); font-size: 13px; }
+.sub-edit label { display: flex; flex-direction: column; gap: 4px; color: var(--ink-dim); font-size: 12px; }
+.sub-edit select, .sub-edit input { min-height: 40px; border-radius: 8px; border: 1px solid var(--line-2); background: var(--panel-2); color: var(--ink); padding: 6px 10px; font-size: 14px; }
+.sub-edit .row-check { flex-direction: row; align-items: center; gap: 8px; min-height: 40px; color: var(--ink); }
+.sub-edit .row-check input { width: 18px; height: 18px; accent-color: var(--accent); }
+.add-form { display: grid; gap: 8px; position: relative; }
+.add-form .search-input { min-height: 46px; }
+.add-form .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.add-form select, .add-form input.small { min-height: 44px; border-radius: 10px; border: 1px solid var(--line-2); background: var(--panel-2); color: var(--ink); padding: 8px 12px; font-size: 14px; }
+.add-form .suggest { top: 54px; left: 0; right: 0; }
+.add-form .chosen { font-size: 13px; color: var(--accent); }
+.notif { display: grid; grid-template-columns: 34px 1fr auto; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 13px; align-items: start; }
+.notif:last-child { border-bottom: 0; }
+.notif .ic { font-size: 20px; text-align: center; }
+.notif .msg { color: var(--ink); line-height: 1.45; word-break: break-word; }
+.notif .meta { font-size: 11px; color: var(--ink-mute); margin-top: 3px; }
+.st { font-size: 10px; font-family: 'JetBrains Mono', monospace; padding: 3px 7px; border-radius: 4px; white-space: nowrap; }
+.st.sent { background: rgba(124,249,200,.15); color: var(--accent); }
+.st.simulated { background: rgba(177,140,255,.15); color: var(--violet); }
+.st.failed { background: rgba(255,45,85,.15); color: var(--danger); }
+.st.skipped_quiet { background: rgba(255,255,255,.06); color: var(--ink-dim); }
+.mode-banner { grid-column: 1 / -1; padding: 10px 14px; border-radius: 12px; font-size: 13px; line-height: 1.5; }
+.mode-banner.sim { background: rgba(177,140,255,.1); border: 1px solid rgba(177,140,255,.35); }
+.mode-banner.live { background: rgba(124,249,200,.08); border: 1px solid rgba(124,249,200,.3); }
+.mode-banner code { background: rgba(255,255,255,.08); padding: 1px 5px; border-radius: 4px; font-size: 11px; }
+.prof-form { display: grid; gap: 8px; }
+.prof-form label { display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: var(--ink-dim); }
+.prof-form input, .prof-form select { min-height: 44px; border-radius: 10px; border: 1px solid var(--line-2); background: var(--panel-2); color: var(--ink); padding: 8px 12px; font-size: 14px; }
+.prof-form .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.prof-form .grid-phone { display: grid; grid-template-columns: 110px 1fr; gap: 8px; }
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 8px; }
+.step { padding: 10px; border-radius: 10px; background: rgba(255,255,255,.03); border: 1px solid var(--line); font-size: 13px; }
+.step.done { border-color: rgba(124,249,200,.4); }
+.step span { display: block; font-size: 10px; color: var(--ink-mute); letter-spacing: .1em; font-family: 'JetBrains Mono', monospace; margin-bottom: 4px; }
