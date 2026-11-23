@@ -24,7 +24,7 @@
     "@hono/vite-build": "^1.11.1",
     "@hono/vite-dev-server": "^0.26.1",
     "vite": "^8.1.4",
-    "wrangler": "^4.160.0"
+    "wrangler": "^4.165.0"
   },
   "allowScripts": {
     "esbuild@0.28.2": true,
